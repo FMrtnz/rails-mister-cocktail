@@ -6,11 +6,13 @@
           <thead>
           <th>Ingredients</th>
           <th>Doses</th>
+          <th>Actions</th>
           </thead>
             <% @cocktail.doses.each do |dose| %>
             <tr style="width: 100%">
             <td><%= dose.ingredient[:name] %></td>
             <td><%= dose.description %></td>
+            <td><%= link_to icon('trash'), dose_path(dose.id), method: :delete, data: { confirm: 'Are you sure?' }%></td>
             </tr>
             <% end %>
         </table>
