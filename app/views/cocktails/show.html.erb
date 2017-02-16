@@ -1,2 +1,18 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('http://lorempixel.com/400/200/food/');">
+  <h1><%= @cocktail.name %></h1>
+  </div>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+          <th>Ingredients</th>
+          <th>Doses</th>
+          </thead>
+            <% @cocktail.doses.each do |dose| %>
+            <tr style="width: 100%">
+            <td><%= dose.ingredient[:name] %></td>
+            <td><%= dose.description %></td>
+            </tr>
+            <% end %>
+        </table>
+      </div>
+<%= link_to icon('plus-circle')+' Add ingredient', new_cocktail_dose_path(@cocktail.id) %>

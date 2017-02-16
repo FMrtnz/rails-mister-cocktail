@@ -1,1 +1,22 @@
 index.html.erb
+<p id="notice"><%= notice %></p>
+
+<h1>cocktails</h1>
+
+<div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="color: rgba(250,250,250, 0.9); background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/400/200/food/');">
+              <div class="card-description">
+                <h2><%= cocktail.name %></h2>
+                <p>doses</p>
+              </div>
+              <%= link_to 'Details', cocktail, class: "btn btn-medium btn-primary" %>
+          </div>
+      </div>
+      <% end %>
+    </div>
+</div>
+
+

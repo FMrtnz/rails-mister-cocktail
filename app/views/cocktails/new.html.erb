@@ -1,2 +1,12 @@
-<h1>Cocktails#new</h1>
+<h1>cocktails#new</h1>
 <p>Find me in app/views/cocktails/new.html.erb</p>
+
+<div class="form-horizontal">
+  <div class="form-group text-align">
+    <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name %>
+      <%= f.submit "Add", class: "btn btn-primary padding" %>
+    <% end %>
+  </div>
+</div>
+<%= link_to icon('chevron-circle-left')+' Back', cocktails_path %>

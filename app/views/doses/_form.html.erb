@@ -1,13 +1,14 @@
-<%= simple_form_for(@dose) do |f| %>
-  <%= f.error_notification %>
+<h1>cocktails#new</h1>
+<p>Find me in app/views/cocktails/new.html.erb</p>
 
-  <div class="form-inputs">
-    <%= f.input :description %>
-    <%= f.association :cocktail %>
-    <%= f.association :ingredient %>
-  </div>
+<div class="form-horizontal">
+<div class="form-group text-align">
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.association :ingredient, label: "Choose ingredient" %>
+    <%= f.input :description, label: "Choose dose" %>
+    <%= f.submit 'Add ingredient', class: "btn btn-primary padding" %>
+  <% end %>
+</div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<%= link_to icon('chevron-circle-left')+' Back', cocktail_path(@cocktail) %>
