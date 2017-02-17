@@ -44,6 +44,9 @@ gem 'turbolinks', '~> 5'
 # gem 'bcrypt', '~> 3.1.7'
 # Gems for upload images
 gem 'figaro'
+gem "cloudinary", "1.1.0"
+gem "attachinary", github: "assembler/attachinary"
+gem "jquery-fileupload-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

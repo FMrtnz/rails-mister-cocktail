@@ -2,3 +2,17 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.container {
+  width: 80%;
+  margin: 0 10%;
+}
+
+.card {
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+  background-size : 100%;
+}
+
+.card>h2,p {
+  color: rgba(250,250,250,1);
+}

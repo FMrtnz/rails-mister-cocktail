@@ -1,6 +1,12 @@
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('http://lorempixel.com/400/200/food/');">
-  <h1><%= @cocktail.name %></h1>
-  </div>
+<div class="container">
+    <h1><%= @cocktail.name %></h1>
+  <div class="row">
+    <div class="col-md-4">
+      <% if @cocktail.photo? %>
+          <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill, class: "img-rounded" %>
+        <% end %>
+    </div>
+    <div class="col-md-6">
       <div class="table-responsive">
         <table class="table table-hover">
           <thead>
@@ -13,11 +19,14 @@
             <td><%= dose.ingredient[:name] %></td>
             <td><%= dose.description %></td>
             <td class="text-center"><%= link_to icon('trash'), dose_path(dose.id), method: :delete, data: { confirm: 'Are you sure?' }%></td>
-            </tr>
-            <% end %>
-        </table>
-      </div>
-<%= link_to icon('plus-circle')+' Add ingredient', new_cocktail_dose_path(@cocktail.id) %>
-<% content_for(:cocktail_name) do %>
-<%= @cocktail.name %>
-<% end %>
+          </tr>
+          <% end %>
+           </table>
+          </div>
+        <%= link_to icon('plus-circle')+' Add ingredient', new_cocktail_dose_path(@cocktail.id) %>
+    </div>
+</div>
+  <% content_for(:cocktail_name) do %>
+  <%= @cocktail.name %>
+  <% end %>
+</div>
