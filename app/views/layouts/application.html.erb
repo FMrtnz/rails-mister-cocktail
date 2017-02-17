@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:name).blank? ? "Mister Cocktail" : yield(:name) %></title>    <%= csrf_meta_tags %>
+    <title><%= yield(:cocktail_name).blank? ? "Mister Cocktail" : yield(:cocktail_name) %></title>    <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>

@@ -12,7 +12,10 @@ index.html.erb
                 <h2><%= cocktail.name %></h2>
                 <p>doses</p>
               </div>
-              <%= link_to 'Details', cocktail, class: "btn btn-medium btn-primary" %>
+              <div>
+              <%= link_to 'Details', cocktail, class: "btn btn-medium btn-primary btn-sm" %>
+              <%= link_to icon('trash'), cocktail_path(cocktail.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-medium btn-primary right btn-sm" %>
+              </div>
           </div>
       </div>
       <% end %>

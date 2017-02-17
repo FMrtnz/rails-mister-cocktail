@@ -3,7 +3,7 @@
 
 <div class="form-horizontal">
 <div class="form-group text-align">
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= simple_form_for [cocktail, dose] do |f| %>
     <%= f.association :ingredient, label: "Choose ingredient" %>
     <%= f.input :description, label: "Choose dose" %>
     <%= f.submit 'Add ingredient', class: "btn btn-primary padding" %>

@@ -1,1 +1,5 @@
-<%= render 'form', dose: @dose %>
+<%= render 'form', dose: @dose, cocktail: @cocktail %>
+
+<% content_for(:cocktail_name) do %>
+<%= @cocktail.name %>
+<% end %>

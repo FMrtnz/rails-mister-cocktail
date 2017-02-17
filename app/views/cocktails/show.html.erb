@@ -12,9 +12,12 @@
             <tr style="width: 100%">
             <td><%= dose.ingredient[:name] %></td>
             <td><%= dose.description %></td>
-            <td><%= link_to icon('trash'), dose_path(dose.id), method: :delete, data: { confirm: 'Are you sure?' }%></td>
+            <td class="text-center"><%= link_to icon('trash'), dose_path(dose.id), method: :delete, data: { confirm: 'Are you sure?' }%></td>
             </tr>
             <% end %>
         </table>
       </div>
 <%= link_to icon('plus-circle')+' Add ingredient', new_cocktail_dose_path(@cocktail.id) %>
+<% content_for(:cocktail_name) do %>
+<%= @cocktail.name %>
+<% end %>

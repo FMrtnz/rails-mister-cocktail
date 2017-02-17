@@ -22,6 +22,12 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+    redirect_to cocktails_path, notice: 'cocktail was successfully destroyed.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cocktail
